@@ -1,0 +1,12 @@
+rails specific
+config/database.yml
+log/*
+tmp/*
+solr/*
+nbproject/*
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out

@@ -1,0 +1,36 @@
+<div class="container showgrid"> 
+      <h1>Forms</h1> 
+      <hr> 
+      <div class="span-12"> 
+          <% form_for @plan_item  do |f| %>
+          <%= error_messages_for :plan_item %>
+          <fieldset> 
+            <legend>Create Plan Item</legend> 
+            <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+            </p>
+            <p>
+            <%= f.label :description %><br>
+            <%= f.text_area :description %>
+            </p>
+            <p>
+              <label>Connotation</label><br>
+              <%= select("plan_item", "positiveconnotation",  [["positive", 1],["negative", 0]]) %>
+            </p>
+
+            <p>
+              <%= f.label :point %><br>
+              <%= f.text_field :points %>
+            </p>
+            
+            <p>
+              <%= submit_tag "submit" %>
+              <%= link_to("cancel", plan_items_path ) %>
+            </p>
+            
+          </fieldset>
+          <% end %>        
+      </div>
+</div>
+        
