@@ -1,10 +1,10 @@
-<h1> Achiever </h1>
-<hr>
+<div class="span-24 " id="entry_menu">
+  <div class="span-17 colborder" >
+  <%= link_to "Plan Items", plan_items_path %> |  <%= link_to "New Plan Item", new_plan_item_path %> |
+  <%= link_to "Entries ", entries_path %> |  <%= link_to "New Entry", new_entry_path %> |
 
-<p> Welcome to Achiever </p>
+  <hr/>
 
-<table width="100%">
-  <tr>
-    <th>Staistics<th>
-  </tr>
-</table>
+  <img src="<%=@graph%>"/>
+  </div>
+</div>

@@ -1,11 +1,11 @@
 <div class="span-17 colborder" id="entry_menu">
-  <%= link_to "Plan Items", plan_items_path %> |  <%= link_to "New Entry", new_entry_path %> |
+  <%= link_to "Home", "/" %> | <%= link_to "Plan Items", plan_items_path %> |  <%= link_to "New Entry", new_entry_path %> |
   <br>
   <br>
   <hr/>
   <h4>Status :<%= @today%> </h4>
   <p>
-    Total Points: <i><%= @points%>/1000 </i>&nbsp <%= 1000 - @points  %> left at <%= (1000 - @points ).to_i/((@end_date.day - @today.day) + 1) %> per day
+    Total Points: <i><%= @points%>/1000 </i>&nbsp <%= 1000 - @points  %> left at <%= (1000 - @points ).to_i/((@end_date.day - @today.day) ) %> per day
     <% width = ((400.0/1000.0)*@points.to_f).to_i %>
     <div style="width:400px;height:20px;background-color:#cccccc;"><div style="width:<%=width%>;height:20px;background-color:#141ccc;"></div></div>
   </p>

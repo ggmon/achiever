@@ -1,11 +1,12 @@
 class HomeController < ApplicationController
   def index
-  end
-
-  def points
-    @points = Entry.all.map{|e| e.plan_item.points.to_i * e.quantity.to_i * 
-      (e.plan_item.positiveconnotation ?  1 : -1 )}.inject{|a,b| a + b}
-
-    render :text=>@points.to_s
+    
+    points = Entry.total_points
+    total_points = 1000.0
+    
+    complete = (points.to_f/total_points.to_f)* 100    
+    incomplete = 100 - complete.to_i
+    @graph  = "https://chart.googleapis.com/chart?cht=p3&chs=460x220&chd=t:#{complete},#{incomplete}"+
+    "&chl=complete|incomplete&chdl=#{complete.to_i}%|#{incomplete.to_i}%"
   end
 end

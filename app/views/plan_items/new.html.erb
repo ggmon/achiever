@@ -1,6 +1,8 @@
-<div class="container showgrid"> 
-      <h1>Forms</h1> 
-      <hr> 
+<div class="span-17 colborder" id="entry_menu">
+  <%= link_to "Home", "/" %> | <%= link_to "Entries ", entries_path %> | <%= link_to "Plan Items ", plan_items_path %> 
+  <br>
+  <br>
+<div class="span-17 "> 
       <div class="span-12"> 
           <% form_for @plan_item  do |f| %>
           <%= error_messages_for :plan_item %>
@@ -34,3 +36,4 @@
       </div>
 </div>
         
+</div>
